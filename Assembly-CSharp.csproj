@@ -45,51 +45,62 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Free 2D Cartoon Parallax Background\Demo\Script\BackgroundControl_0.cs" />
      <Compile Include="Assets\Scripts\WaypointFollower.cs" />
+     <Compile Include="Assets\Scripts\RepeatBG.cs" />
+     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Free 2D Cartoon Parallax Background\Demo\Script\ParallaxBackground_0.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Saw" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Mask Dude" />
-     <Folder Include="Assets\Sprites\Terrain\Tiles" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Checkpoints\Checkpoint" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Platforms" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\Demo\Scenes" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\Demo" />
+     <None Include="Assets\Edgar\package.json" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Pink Man" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Arrow" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\!_Moutain" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Background" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\4_Snow" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Fan" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Ninja Frog" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spiked Ball" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\2_Desert" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\FullBG" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Boxes" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Trampoline" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Sand Mud Ice" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Falling Platforms" />
      <Folder Include="Assets\Pixel Adventure 1" />
-     <Folder Include="Assets\Pixel Adventure 1\Assets\Background\Tiles" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters" />
+     <Folder Include="Assets\Edgar\Libraries" />
      <Folder Include="Assets\Animations" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Checkpoints" />
      <Folder Include="Assets\Pixel Adventure 1\Assets" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spike Head" />
+     <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Terrain" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Fruits" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Checkpoints\End" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Blocks" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Rock Head" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Boxes\Box1" />
-     <Folder Include="Assets\Sprites\Terrain" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Boxes\Box2" />
+     <Folder Include="Assets\Edgar" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Other" />
-     <Folder Include="Assets\Pixel Adventure 1\Scenes" />
-     <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spikes\Materials" />
-     <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spike Head\Materials" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\Demo\Script" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Fire" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Boxes\Box3" />
+     <Folder Include="Assets\Free 2D Cartoon Parallax Background\3_Graveyard" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Virtual Guy" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spikes" />
      <Folder Include="Assets\Sprites" />
@@ -348,6 +359,9 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>D:\BalimTez\Rubber Ball\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="EdgarSingleFile">
+     <HintPath>D:\BalimTez\Rubber Ball\Assets\Edgar\Libraries\EdgarSingleFile.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -849,6 +863,18 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Edgar.Unity.Editor.csproj">
+      <Project>{7f67f05d-3400-1f87-c745-c907d158289d}</Project>
+      <Name>Edgar.Unity.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Edgar.Unity.Examples.csproj">
+      <Project>{562a11cc-0a64-e5da-4766-05d6ce60c554}</Project>
+      <Name>Edgar.Unity.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="Edgar.Unity.csproj">
+      <Project>{bfd8f97c-2917-df4a-0c28-85387b3db988}</Project>
+      <Name>Edgar.Unity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
