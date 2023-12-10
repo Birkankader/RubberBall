@@ -45,21 +45,38 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\LevelGenerator\Scripts\Exceptions\InvalidRuleDeclarationException.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Section.cs" />
+     <Compile Include="Assets\Scripts\Platformer1PostProcessing.cs" />
      <Compile Include="Assets\Scripts\WaypointFollower.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\AdvancedExit.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Bounds.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Structure\TagRule.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Structure\WeightedSectionList.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\DeadEnd.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Helpers\RandomService.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Structure\WeightedList.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Exits.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Helpers\ExtensionMethods.cs" />
      <Compile Include="Assets\Scripts\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\LevelGenerator\Scripts\Structure\WeightedListItem.cs" />
      <Folder Include="Assets" />
+     <Folder Include="Assets\LevelGenerator\Demo\Materials" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Saw" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Mask Dude" />
      <Folder Include="Assets\Sprites\Terrain\Tiles" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Checkpoints\Checkpoint" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Platforms" />
+     <Folder Include="Assets\LevelGenerator\Scripts\Helpers" />
+     <None Include="Assets\Edgar\package.json" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Pink Man" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Arrow" />
-     <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Background" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps" />
+     <Folder Include="Assets\LevelGenerator\Resources" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Fan" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Ninja Frog" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spiked Ball" />
@@ -71,27 +88,38 @@
      <Folder Include="Assets\Pixel Adventure 1" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Background\Tiles" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters" />
+     <Folder Include="Assets\Edgar\Libraries" />
      <Folder Include="Assets\Animations" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Checkpoints" />
+     <Folder Include="Assets\LevelGenerator\Scripts\Exceptions" />
      <Folder Include="Assets\Pixel Adventure 1\Assets" />
+     <Folder Include="Assets\LevelGenerator\Demo" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spike Head" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Terrain" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Fruits" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Checkpoints\End" />
+     <Folder Include="Assets\LevelGenerator\Scripts" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Blocks" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Rock Head" />
+     <Folder Include="Assets\LevelGenerator\Scripts\Structure" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Boxes\Box1" />
      <Folder Include="Assets\Sprites\Terrain" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Boxes\Box2" />
+     <Folder Include="Assets\Edgar" />
+     <Folder Include="Assets\LevelGenerator\Demo\Prefabs" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Other" />
      <Folder Include="Assets\Pixel Adventure 1\Scenes" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spikes\Materials" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spike Head\Materials" />
      <Folder Include="Assets\Scenes" />
+     <Folder Include="Assets\LevelGenerator\Demo\Scenes" />
+     <Folder Include="Assets\LevelGenerator\Documentation" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Fire" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Boxes\Box3" />
+     <Folder Include="Assets\LevelGenerator" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Main Characters\Virtual Guy" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Traps\Spikes" />
+     <Folder Include="Assets\AutoLevelGeneration" />
      <Folder Include="Assets\Sprites" />
      <Folder Include="Assets\Pixel Adventure 1\Assets\Items\Checkpoints\Start" />
      <Reference Include="UnityEngine">
@@ -348,6 +376,9 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>D:\BalimTez\Rubber Ball\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="EdgarSingleFile">
+     <HintPath>D:\BalimTez\Rubber Ball\Assets\Edgar\Libraries\EdgarSingleFile.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -849,6 +880,18 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Edgar.Unity.Editor.csproj">
+      <Project>{7f67f05d-3400-1f87-c745-c907d158289d}</Project>
+      <Name>Edgar.Unity.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Edgar.Unity.Examples.csproj">
+      <Project>{562a11cc-0a64-e5da-4766-05d6ce60c554}</Project>
+      <Name>Edgar.Unity.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="Edgar.Unity.csproj">
+      <Project>{bfd8f97c-2917-df4a-0c28-85387b3db988}</Project>
+      <Name>Edgar.Unity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
