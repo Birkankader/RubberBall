@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - PlayerComponent
   - Trap
+  - Collectible
+  - ScoreText
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

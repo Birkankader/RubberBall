@@ -1,19 +1,18 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
 
     private Animator anim;
-    private Rigidbody2D rb;
-
+    private Rigidbody2D rigidbody;
+    private Vector3 startPos;
+    
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        startPos = transform.position;
     }
     
     private void OnCollisionEnter2D(Collision2D collision) 
@@ -26,14 +25,27 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
-        rb.isKinematic = true;
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        rigidbody.isKinematic = true;
+        rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         anim.SetTrigger("DeathTrigger");
+        StartCoroutine(Respawn(0.5f));
     }
 
-    private void RestartLevel()
+    IEnumerator Respawn(float duration)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        yield return new WaitForSeconds(duration);
+        anim.SetTrigger("RespawnTrigger");
+        transform.position = startPos;
+        rigidbody.isKinematic = false;
+        rigidbody.constraints = RigidbodyConstraints2D.None;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Checkpoint"))
+        {
+            startPos = transform.position;
+        }
     }
 
 }
