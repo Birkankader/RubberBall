@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -61,21 +58,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        Vector3 normal = other.GetContact(0).normal;
+        if (normal == Vector3.up)
         {
-            Vector3 normal = other.GetContact(0).normal;
-            if (normal == Vector3.up)
-            {
-                isGrounded = true;
-            }
+            isGrounded = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
+        isGrounded = false;
     }
 }

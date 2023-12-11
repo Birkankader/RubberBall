@@ -12,7 +12,10 @@ public class Platformer1PostProcessing : DungeonGeneratorPostProcessingGrid2D
     {
         // Get the tilemap that we want to delete tiles from
         var walls = level.GetSharedTilemaps().Single(x => x.name == "Walls");
+        walls.tag = "Ground";
 
+        var platforms = level.GetSharedTilemaps().Single(x => x.name == "Platforms");
+        
         // Go through individual rooms
         foreach (var roomInstance in level.RoomInstances)
         {
