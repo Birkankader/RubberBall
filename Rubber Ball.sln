@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edgar.Unity.Examples", "Edg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{02d3c22c-af80-b3d2-2d1c-0f81129bb570}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{c8f0bc36-e51c-31be-4d8e-446992e92878}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edgar.Unity.FogOfWar.LWRP", "Edgar.Unity.FogOfWar.LWRP.csproj", "{7e9f91cc-0597-3531-097e-63e5f67aaee1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edgar.Unity.FogOfWar.URP", "Edgar.Unity.FogOfWar.URP.csproj", "{a51e2c64-eb0e-b12d-be35-81755113c999}"
@@ -26,6 +28,8 @@ Global
 		{562a11cc-0a64-e5da-4766-05d6ce60c554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02d3c22c-af80-b3d2-2d1c-0f81129bb570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02d3c22c-af80-b3d2-2d1c-0f81129bb570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c8f0bc36-e51c-31be-4d8e-446992e92878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c8f0bc36-e51c-31be-4d8e-446992e92878}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7e9f91cc-0597-3531-097e-63e5f67aaee1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7e9f91cc-0597-3531-097e-63e5f67aaee1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{a51e2c64-eb0e-b12d-be35-81755113c999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

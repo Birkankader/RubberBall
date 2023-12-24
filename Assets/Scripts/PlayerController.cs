@@ -26,15 +26,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (moveInput > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isJumping = true;

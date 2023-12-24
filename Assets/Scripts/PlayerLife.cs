@@ -45,6 +45,7 @@ public class PlayerLife : MonoBehaviour
         if (col.gameObject.CompareTag("Checkpoint"))
         {
             startPos = transform.position;
+            col.gameObject.GetComponent<Animator>().SetTrigger("CheckpointReachedTrigger");
         }
     }
 
